@@ -3,11 +3,11 @@ export default function PlayerScoreBox(playerName, id) {
   const span1 = document.createElement("span1");
   const span2 = document.createElement("span2");
 
-  span1.innerText = fixName(playerName);
-  span2.innerText = 0;
-
   span1.id = id + "Name";
   span2.id = id + "Score";
+
+  span1.innerText = fixName(playerName);
+  span2.innerText = 0;
 
   span1.classList.add("playerName")
   span2.classList.add("playerScore")

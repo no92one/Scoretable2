@@ -1,9 +1,9 @@
-export default function TopScoreDisplay() {
+export default function TopScoreDisplay(topScore) {
   const topScoreDisplay = document.createElement("input");
 
   topScoreDisplay.type = "number";
-  topScoreDisplay.id = "resetBtn";
-  topScoreDisplay.value = 5;
+  topScoreDisplay.id = "topScore";
+  topScoreDisplay.value = topScore;
 
   return topScoreDisplay;
 }

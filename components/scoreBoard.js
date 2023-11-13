@@ -1,9 +1,9 @@
-import AddButton from "./addButton.js";
-import BtnBox from "./btnbox.js";
+import AddButton from "./scoreboardComponents/addButton.js";
+import BtnBox from "./scoreboardComponents/btnbox.js";
 import Player from "../classes/player.js";
-import PlayerScoreBox from "./playerScoreBox.js";
-import RemoveButton from "./removeButton.js";
-import TopScoreDisplay from "./topScoreInput.js";
+import PlayerScoreBox from "./scoreboardComponents/playerScoreBox.js";
+import RemoveButton from "./scoreboardComponents/removeButton.js";
+import TopScoreDisplay from "./scoreboardComponents/topScoreInput.js";
 
 let gameOver = false;
 let topScore = 5
@@ -13,7 +13,7 @@ export default function ScoreBoard(playerNames) {
   const scoreBoard = document.createElement("main")
   const scoreArea = document.createElement("section");
   const btnSection = document.createElement("section");
-  const topScoreDisplay = TopScoreDisplay();
+  const topScoreDisplay = TopScoreDisplay(topScore);
 
   topScoreDisplay.addEventListener("change", (event) => {
     topScore = event.target.value
@@ -61,7 +61,6 @@ function createPlayer(display, addBtn, removeBtn) {
     decreaseScore(newPlayer, playerList)
   })
 }
-
 
 function updateScore(player, opponents) {
   if (!gameOver) {
