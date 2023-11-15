@@ -15,7 +15,6 @@ export default function Setup() {
   createBtn.addEventListener("click", createScoreboard)
 
   playerAmount.addEventListener("change", (event) => {
-    console.log("något");
     updatePlayerNames(event)
   })
 
