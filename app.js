@@ -1,25 +1,3 @@
-import ScoreBoard from "./components/scoreBoard.js";
+import Setup from "./components/setup.js";
 
-const playerAmount = document.querySelector("#playerAmount")
-
-let playerList = ["Bosse", "Katarina", "Anders", "Erika"]
-document.body.appendChild(ScoreBoard(playerList))
-
-
-// Event Listeners_____________________________________________________
-
-playerAmount.addEventListener("change", (event) => {
-  console.dir(event.target)
-  if (event.target.valueAsNumber <= Number(event.target.max)
-    && event.target.valueAsNumber >= Number(event.target.min)) {
-    playerList = []
-
-    for (let i = 1; i <= event.target.valueAsNumber; i++) {
-      playerList.push("player " + i)
-    }
-
-    document.querySelector("main").replaceWith(ScoreBoard(playerList))
-  } else {
-    event.target.value = playerList.length;
-  }
-})
+document.body.appendChild(Setup())
